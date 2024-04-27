@@ -123,8 +123,14 @@
 ;14
 ;devuelve una ueva lista en la que cada ocurrencia de a se 
 ;itnercambia por b y viceversa
-
-
+(define (swapper a b lst)
+  (cond ((null? lst) lst)
+       ((eq? (car lst) a) (cons b (swapper b a (cdr lst))))
+       ((eq? (car lst) b) (cons a (swapper b a (cdr lst))))
+       (else (cons (car lst) (swapper a b (cdr lst)))
+       )
+       )
+)
 
 ;15
 ;devuelve producto punto de dos listas
