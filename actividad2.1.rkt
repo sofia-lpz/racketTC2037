@@ -51,10 +51,10 @@
 
 ;6
 ;duplica los elementos de una lista
-(define (duplicate l)
-(if (null? l)
+(define (duplicate lst)
+(if (null? lst)
 '()
-(cons (car l) (cons (car l) (duplicate (cdr l)))
+(cons (car lst) (cons (car lst) (duplicate (cdr lst)))
 )
 ))
 
@@ -79,27 +79,27 @@
 
 ;9
 ;mete en una lista cada elemento de una lista
-(define( enlist l)
-  (if (null? l)
+(define( enlist lst)
+  (if (null? lst)
       '()
-      (cons (list(car l)) (enlist(cdr l)))))
+      (cons (list(car lst)) (enlist(cdr lst)))))
 
 ;10
 ;regresa los numeros positivos de la lista
-(define (positives l)
-  (if (null? l)
+(define (positives lst)
+  (if (null? lst)
       '()
-      (if (> (car l) 0)
-          (cons (car l) (positives (cdr l)))
-          (positives (cdr l))))
+      (if (> (car lst) 0)
+          (cons (car lst) (positives (cdr lst)))
+          (positives (cdr lst))))
 )
 
 ;11
 ;Suma elementos de una lista
-(define (add-list l)
-  (if (null? l)
+(define (add-list lst)
+  (if (null? lst)
       0
-      (+ (car l) (add-list (cdr l)))))
+      (+ (car lst) (add-list (cdr lst)))))
 
 ;12
 ;toma una tupla y devuelve la tupla invertida
@@ -110,11 +110,11 @@
 ;13
 ;devuelve verdadero si la lista tiene simbolos, falso si no
 (
-    define (list-of-symbols? l)
-    (if (null? l)
+    define (list-of-symbols? lst)
+    (if (null? lst)
     #t
-    (if (symbol? (car l))
-    (list-of-symbols? (cdr l))
+    (if (symbol? (car lst))
+    (list-of-symbols? (cdr lst))
     #f
     )
     )
@@ -134,19 +134,19 @@
 
 ;15
 ;devuelve producto punto de dos listas
-(define (dot-product l1 l2)
-  (if (null? l1)
+(define (dot-product lst1 lst2)
+  (if (null? lst1)
       0
-      (+ (* (car l1) (car l2)) (dot-product (cdr l1) (cdr l2)))
+      (+ (* (car lst1) (car lst2)) (dot-product (cdr lst1) (cdr lst2)))
   )
 )
 
 ;16
 ;promedio de una lista
-(define (average l)
-  (if (null? l)
+(define (average lst)
+  (if (null? lst)
       0
-      (/ (add-list l) (length l))))
+      (/ (add-list lst) (length lst))))
 
 ;17
 ;desviacion estandar
