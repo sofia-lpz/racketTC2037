@@ -1,4 +1,6 @@
 #lang racket
+;Sofia Moreno Lopez
+;A01028251
 
 ;1
 ;toma grados en fahrenheit y transforma a celcius
@@ -82,7 +84,11 @@
 (define( enlist lst)
   (if (null? lst)
       '()
-      (cons (list(car lst)) (enlist(cdr lst)))))
+      (
+        cons (list(car lst)) (enlist(cdr lst))
+      )
+  )
+)
 
 ;10
 ;regresa los numeros positivos de la lista
@@ -91,7 +97,9 @@
       '()
       (if (> (car lst) 0)
           (cons (car lst) (positives (cdr lst)))
-          (positives (cdr lst))))
+          (positives (cdr lst))
+      )
+  )
 )
 
 ;11
@@ -99,7 +107,9 @@
 (define (add-list lst)
   (if (null? lst)
       0
-      (+ (car lst) (add-list (cdr lst)))))
+      (+ (car lst) (add-list (cdr lst)))
+  )
+)
 
 ;12
 ;toma una tupla y devuelve la tupla invertida
@@ -127,9 +137,8 @@
   (cond ((null? lst) lst)
        ((eq? (car lst) a) (cons b (swapper b a (cdr lst))))
        ((eq? (car lst) b) (cons a (swapper b a (cdr lst))))
-       (else (cons (car lst) (swapper a b (cdr lst)))
-       )
-       )
+       (else (cons (car lst) (swapper a b (cdr lst))))
+  )
 )
 
 ;15
@@ -146,25 +155,33 @@
 (define (average lst)
   (if (null? lst)
       0
-      (/ (add-list lst) (length lst))))
+      (/ (add-list lst) (length lst))
+  )
+)
 
 ;17
 ;desviacion estandar
 (define (square-difference x avg)
-  (expt (- x avg) 2))
+  (expt (- x avg) 2)
+)
 
 (define (map-square-difference lst avg)
   (if (null? lst)
       '()
       (cons (square-difference (car lst) avg)
-            (map-square-difference (cdr lst) avg))))
+            (map-square-difference (cdr lst) avg))
+  )
+)
 
 (define (standard-deviation lst)
   (if (null? lst)
       0
       (let ((avg (average lst))
             (squared-diffs (map-square-difference lst (average lst))))
-        (sqrt (/ (add-list squared-diffs) (length lst))))))
+        (sqrt (/ (add-list squared-diffs) (length lst)))
+      )
+  )
+)
 
 
 
@@ -185,17 +202,24 @@
 (define (expand lst)
   (if (null? lst)
       '()
-      (expand-aux lst 1)))
+      (expand-aux lst 1)
+  )
+)
 
 (define (expand-aux lst count)
   (if (null? lst)
       '()
       (append (make-list count (car lst))
-              (expand-aux (cdr lst) (add1 count)))))
+              (expand-aux (cdr lst) (add1 count))
+      )
+  )
+)
 
 ;20
 ;regresa el numero en binario
 (define (binary n)
   (if (= n 0)
       '()
-      (append (binary (quotient n 2)) (list (remainder n 2)))))
+      (append (binary (quotient n 2)) (list (remainder n 2)))
+  )
+)
