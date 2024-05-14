@@ -1,0 +1,14 @@
+a = 10
+b = 20.5
+c = a + b
+d = a - b
+e = a * b
+f = a / b
+g = a ^ b
+sinespacio=99
+h = 10.
+j=6.345e-5
+variable_1 = 100
+variable_2 = 200.5
+// Esto es un comentario
+resultado = variable_1 + variable_2 // Esto es otro comentario
