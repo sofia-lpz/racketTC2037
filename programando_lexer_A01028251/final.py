@@ -1,6 +1,15 @@
 #Sofia Moreno 
 #A01028251
 
+states = {
+    'START': 0,
+    'REAL': 1,
+    'ENTERO': 2,
+    'VARIABLE': 3
+    
+}
+
+
 def lexerAritmetico(archivo):
     with open(archivo, 'r') as f:
         lines = f.readlines()
